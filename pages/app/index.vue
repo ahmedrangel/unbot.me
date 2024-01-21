@@ -4,9 +4,9 @@ const { loggedIn, user, clear } = useUserSession();
 
 onMounted(async () => {
   const { io } = await import("socket.io-client");
-  const socket = io("http://localhost:3000");
+  const socket = io("https://unbotme.yizack.com");
   socket.on("connect", () => {
-    socket.emit("login", user.value).close();
+    socket.emit("login", user.value);
     socket.close();
   });
 });
