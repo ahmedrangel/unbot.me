@@ -6,6 +6,7 @@ onMounted(async () => {
   const { io } = await import("socket.io-client");
   const socket = io("https://28sz5vd4-3000.use2.devtunnels.ms/");
   socket.emit("login", user.value);
+  socket.close();
 });
 </script>
 
