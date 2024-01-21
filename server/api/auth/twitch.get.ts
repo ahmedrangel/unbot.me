@@ -3,8 +3,12 @@ export default oauth.twitchEventHandler({
     emailRequired: true,
     scope: ["chat:read", "chat:edit", "channel:moderate", "moderator:read:chatters"]
   },
-  async onSuccess(event, session) {
-    await setUserSession(event, { user: session });
+  async onSuccess(event, result) {
+    const user = {
+      ...result.user,
+      tokens: result.tokens
+    };
+    await setUserSession(event, user);
     return sendRedirect(event, "/");
   }
 });
