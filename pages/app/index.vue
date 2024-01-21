@@ -4,9 +4,11 @@ const { loggedIn, user, clear } = useUserSession();
 
 onMounted(async () => {
   const { io } = await import("socket.io-client");
-  const socket = io("https://28sz5vd4-3000.use2.devtunnels.ms/");
-  socket.emit("login", user.value);
-  socket.close();
+  const socket = io("http://localhost:3000");
+  socket.on("connect", () => {
+    socket.emit("login", user.value).close();
+    socket.close();
+  });
 });
 </script>
 
