@@ -1,7 +1,7 @@
 export default oauth.twitchEventHandler({
   config: {
     emailRequired: true,
-    scope: ["chat:read", "chat:edit", "channel:moderate", "moderator:manage:banned_users"]
+    scope: ["chat:read", "chat:edit", "channel:moderate"]
   },
   async onSuccess(event, result) {
     const user = result.user as UserSession["user"];
