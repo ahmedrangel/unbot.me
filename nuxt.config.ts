@@ -4,8 +4,8 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       title: "",
-      htmlAttrs: {
-        lang: "en"
+      bodyAttrs: {
+        "data-bs-theme": "dark"
       },
       meta: [
         { name: "robots", content: "index, follow" }
@@ -13,22 +13,24 @@ export default defineNuxtConfig({
     }
   },
   css: [
-    "bootstrap/dist/css/bootstrap.min.css",
     "~/assets/css/main.css",
     "~/assets/css/transitions.css",
+    "primevue/resources/themes/lara-dark-pink/theme.css",
+    "primeicons/primeicons.css"
   ],
   modules: [
     "nuxt-icon",
     "@nuxtjs/color-mode",
-    "nuxt-simple-sitemap"
+    "nuxt-simple-sitemap",
+    "nuxt-primevue"
   ],
   runtimeConfig: {},
   features: {
     inlineStyles: false
   },
   colorMode: {
-    preference: "light",
-    fallback: "light",
+    preference: "dark",
+    fallback: "dark",
     dataValue: "bs-theme",
     storageKey: "nuxt-color-mode"
   },
@@ -51,5 +53,16 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { sitemap: { priority: 1 } },
     "/*/**": { sitemap: { priority: 0.8, lastmod: new Date().toISOString() } }
+  },
+  primevue: {
+    usePrimeVue: true,
+    cssLayerOrder: "theme, bootstrap, primevue",
+    options: {
+      ripple: true,
+    },
+    components: {
+      prefix: "Prime",
+      include: ["Button", "Card"] /* Used as <PrimeButton /> */
+    }
   }
 });

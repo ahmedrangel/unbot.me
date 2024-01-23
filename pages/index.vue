@@ -4,8 +4,10 @@ const { loggedIn } = useUserSession();
 </script>
 
 <template>
-  <div v-if="!loggedIn">
-    <h1>Not logged in</h1>
-    <a href="/api/auth/twitch">Login with Twitch</a>
-  </div>
+  <main>
+    <div v-if="!loggedIn">
+      <h1>unbot.me</h1>
+      <PrimeButton type="button" label="Join My Channel" icon="pi pi-sign-in" @click="navigateTo('/api/auth/twitch', { external: true })" />
+    </div>
+  </main>
 </template>

@@ -1,0 +1,9 @@
+:root, [data-bs-theme=dark] {
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb: 244, 114, 182;
+  --bs-body-bg: #2d223e!important;
+}
+
+.p-card {
+  background-color: #131124!important;
+}

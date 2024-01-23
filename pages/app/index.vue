@@ -10,13 +10,43 @@ onMounted(async () => {
     socket.close();
   });
 });
+
+const signOut = async() => {
+  await clear();
+  navigateTo("/", { replace: true });
+};
 </script>
 
 <template>
-  <div v-if="loggedIn">
-    <h1>Welcome {{ user.login }}!</h1>
-    <p>Access token: {{ user.tokens.access_token }}</p>
-    <p>Refresh token: {{ user.tokens.refresh_token }}</p>
-    <button @click="clear">Logout</button>
-  </div>
+  <main>
+    <div v-if="loggedIn">
+      <div class="d-flex justify-content-center align-items-center mb-5">
+        <img :src="user.profile_image_url" width="80" class="rounded-circle me-3">
+        <h3 class="mb-0">{{ user.display_name }}</h3>
+      </div>
+      <PrimeCard class="col-12 col-md-6 mb-3 mx-auto">
+        <template #title>
+          <span class="text-primary">@unbotme</span> has joined your channel!
+        </template>
+        <template #content>
+          <p class="text-muted">
+            Make sure <span class="text-primary">@unbotme</span> is set up as a moderator in your channel. Without moderator privileges it won't be able to perform its functions effectively.
+          </p>
+          <p class="text-muted mb-0">
+            <i>/mod unbotme</i>
+          </p>
+        </template>
+      </PrimeCard>
+      <PrimeCard class="col-12 col-md-6 mb-3 mx-auto">
+        <template #content>
+          <span class="text-muted">
+            To cease the bot's moderation on your channel, simply click "Leave My Channel" to prompt its departure.
+          </span>
+        </template>
+        <template #footer>
+          <PrimeButton type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" @click="signOut" />
+        </template>
+      </PrimeCard>
+    </div>
+  </main>
 </template>
