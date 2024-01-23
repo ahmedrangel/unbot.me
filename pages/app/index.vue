@@ -2,6 +2,15 @@
 definePageMeta({ layout: "app", middleware: "session" });
 const { loggedIn, user, clear } = useUserSession();
 
+const { data: userState } = await useFetch(`/api/state/${user.value.id}`);
+
+const logOut = async() => {
+  await clear();
+  navigateTo("/", { replace: true });
+};
+
+if (!userState.value?.active) logOut();
+
 onMounted(async () => {
   const { io } = await import("socket.io-client");
   const socket = io("https://unbotme.yizack.com");
@@ -10,11 +19,6 @@ onMounted(async () => {
     socket.close();
   });
 });
-
-const signOut = async() => {
-  await clear();
-  navigateTo("/", { replace: true });
-};
 </script>
 
 <template>
@@ -44,7 +48,7 @@ const signOut = async() => {
           </span>
         </template>
         <template #footer>
-          <PrimeButton type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" @click="signOut" />
+          <PrimeButton type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" @click="logOut" />
         </template>
       </PrimeCard>
     </div>
