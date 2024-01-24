@@ -1,24 +1,37 @@
 <script setup lang="ts">
 definePageMeta({ layout: "app", middleware: "session" });
 const { loggedIn, user, clear } = useUserSession();
-
-const { data: userState } = await useFetch(`/api/state/${user.value.id}`);
+const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
 
 const logOut = async() => {
+  await useFetch("/api/users/disable", { method: "PUT" });
   await clear();
   navigateTo("/", { replace: true });
 };
 
 if (!userState.value?.active) logOut();
 
-onMounted(async () => {
+const socketEmit = async (event: string, value: Object) => {
   const { io } = await import("socket.io-client");
   const socket = io("https://unbotme.yizack.com");
   socket.on("connect", () => {
-    socket.emit("login", user.value);
+    socket.emit(event, value);
     socket.close();
   });
+};
+
+onMounted(async () => {
+  socketEmit("login", user.value);
 });
+
+const leave = () => {
+  socketEmit("logout", {
+    id_user: user.value.id,
+    user_login: user.value.login,
+    username: user.value.display_name
+  });
+  logOut();
+};
 </script>
 
 <template>
@@ -48,7 +61,7 @@ onMounted(async () => {
           </span>
         </template>
         <template #footer>
-          <PrimeButton type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" @click="logOut" />
+          <PrimeButton type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" @click="leave" />
         </template>
       </PrimeCard>
     </div>
