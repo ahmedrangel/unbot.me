@@ -4,7 +4,7 @@ const { loggedIn, user, clear } = useUserSession();
 const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
 
 const logOut = async() => {
-  await useFetch("/api/users/disable", { method: "PUT" });
+  await $fetch("/api/users/disable", { method: "PUT" }).catch(() => null);
   await clear();
   navigateTo("/", { replace: true });
 };
