@@ -21,11 +21,11 @@ const socketEmit = async (event: string, value: Object) => {
 };
 
 onMounted(async () => {
-  socketEmit("login", user.value);
+  await socketEmit("login", user.value);
 });
 
-const leave = () => {
-  socketEmit("logout", {
+const leave = async () => {
+  await socketEmit("logout", {
     id_user: user.value.id,
     user_login: user.value.login,
     username: user.value.display_name
