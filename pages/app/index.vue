@@ -3,6 +3,8 @@ definePageMeta({ layout: "app", middleware: "session" });
 const { loggedIn, user, clear } = useUserSession();
 const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
 
+const { io } = await import("socket.io-client");
+
 const logOut = async() => {
   await $fetch("/api/users/disable", { method: "PUT" }).catch(() => null);
   await clear();
@@ -12,7 +14,6 @@ const logOut = async() => {
 if (!userState.value?.active) logOut();
 
 const socketEmit = async (event: string, value: Object) => {
-  const { io } = await import("socket.io-client");
   const socket = io("https://unbotme.yizack.com");
   socket.on("connect", () => {
     socket.emit(event, value);
