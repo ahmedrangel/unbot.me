@@ -3,7 +3,7 @@ definePageMeta({ layout: "app", middleware: "session" });
 const { loggedIn, user, clear } = useUserSession();
 const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
 
-const logOut = async() => {
+const logOut = async () => {
   await $fetch("/api/users/disable", { method: "PUT" }).catch(() => null);
   await clear();
   navigateTo("/", { replace: true });
@@ -13,26 +13,27 @@ if (!userState.value?.active) logOut();
 
 const socketEmit = async (event: string, value: Object) => {
   const { io } = await import("socket.io-client");
-  const socket = io("https://unbotme.yizack.com");
+  const socket = io("https://unbotme.yizack.com", {
+    reconnectionAttempts: 3,
+  });
   socket.on("connect", () => {
     socket.emit(event, value);
     socket.close();
   });
 };
 
-const leave = () => {
-  socketEmit("logout", {
+const leave = async () => {
+  if (!process.client) return;
+  await socketEmit("logout", {
     id_user: user.value.id,
     user_login: user.value.login,
     username: user.value.display_name
   });
-  logOut();
-};
+  await logOut();
+}
 
 onMounted(async () => {
-  socketEmit("login", user.value);
-  const out = document.getElementById("out") as HTMLElement;
-  out.addEventListener("click", leave);
+  await socketEmit("login", user.value);
 });
 </script>
 
@@ -63,7 +64,7 @@ onMounted(async () => {
           </span>
         </template>
         <template #footer>
-          <PrimeButton id="out" type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" />
+          <PrimeButton type="button" label="Leave My Channel" icon="pi pi-sign-out" severity="danger" @click="leave" />
         </template>
       </PrimeCard>
     </div>
