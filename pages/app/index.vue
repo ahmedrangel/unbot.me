@@ -30,7 +30,7 @@ const leave = async () => {
     username: user.value.display_name
   });
   await logOut();
-}
+};
 
 onMounted(async () => {
   await socketEmit("login", user.value);
