@@ -1,9 +1,10 @@
 :root, [data-bs-theme=dark] {
   --bs-primary: var(--primary-color);
   --bs-primary-rgb: 244, 114, 182;
-  --bs-body-bg: #2d223e!important;
-}
-
-.p-card {
-  background-color: #131124!important;
+  --bs-body-bg: #110e1a!important;
+  --font-varela-round: "Varela Round";
+  --bs-body-font-family: var(--font-varela-round);
+  --font-family: var(--font-varela-round);
+  --danger-color: #f87171;
+  --danger-color-rgb: 248, 133, 133;
 }

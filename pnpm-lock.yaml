@@ -12,8 +12,8 @@ dependencies:
     specifier: ^6.0.1
     version: 6.0.1
   primevue:
-    specifier: ^3.46.0
-    version: 3.46.0(vue@3.4.15)
+    specifier: ^3.47.1
+    version: 3.47.1(vue@3.4.15)
   socket.io-client:
     specifier: ^4.7.4
     version: 4.7.4
@@ -6388,7 +6388,7 @@ packages:
     resolution: {integrity: sha512-OfXDe5V0WovXt9b2GOjYV1kyVXmcFfj+6DqVs1pbeP4EyF2H0SbIMoUTT8Ax+sXT/tQ+mXr3qTFD9Y6IL+Y9og==, tarball: https://registry.npmjs.org/nuxt-primevue/-/nuxt-primevue-0.2.2.tgz}
     dependencies:
       '@nuxt/kit': 3.9.3
-      primevue: 3.46.0(vue@3.4.15)
+      primevue: 3.47.1(vue@3.4.15)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -7212,8 +7212,8 @@ packages:
     resolution: {integrity: sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==, tarball: https://registry.npmjs.org/primeicons/-/primeicons-6.0.1.tgz}
     dev: false
 
-  /primevue@3.46.0(vue@3.4.15):
-    resolution: {integrity: sha512-WGprXj9HA+j6gLLDaSxcRRSChIF99ld5fg1D3hYFA7hNiEuON1aqe83gf52vUSw8yjVMtFQ3CMPQSTYhooNwIg==, tarball: https://registry.npmjs.org/primevue/-/primevue-3.46.0.tgz}
+  /primevue@3.47.1(vue@3.4.15):
+    resolution: {integrity: sha512-khBr3xu63dlsJDnLISlplMuS/2R1mqjEArpHQE1jpw8+S3dI5MTabnL6Q/RM+o6SYbknafMH/8mjwkO+m8Cvjw==, tarball: https://registry.npmjs.org/primevue/-/primevue-3.47.1.tgz}
     peerDependencies:
       vue: ^3.0.0
     dependencies:

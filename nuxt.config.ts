@@ -9,6 +9,9 @@ export default defineNuxtConfig({
       },
       meta: [
         { name: "robots", content: "index, follow" }
+      ],
+      link: [
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Varela+Round", }
       ]
     }
   },
