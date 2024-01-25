@@ -20,3 +20,7 @@ hr {
 #danger {
   --bs-border-color: rgba(var(--danger-color-rgb), .5)!important;
 }
+
+.p-card-content {
+  padding: 0;
+}
