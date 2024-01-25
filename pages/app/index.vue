@@ -61,7 +61,7 @@ onMounted(async () => {
       <PrimeCard id="danger" class="col-12 col-md-6 mb-3 mx-auto">
         <template #content>
           <span class="text-muted">
-            To cease the bot's moderation on your channel, simply click "Leave My Channel" to prompt its departure.
+            If you prefer the bot to no longer moderate, just clcik on "Leave My Chanenl", and it will depart.
           </span>
         </template>
         <template #footer>
