@@ -61,7 +61,7 @@ onMounted(async () => {
       <PrimeCard id="danger" class="col-12 col-md-6 mb-3 mx-auto">
         <template #content>
           <span class="text-muted">
-            If you prefer the bot to no longer moderate, just click on "Leave My Chanenl", and it will depart.
+            If you prefer the bot to no longer moderate, just click on "Leave My Channel", and it will depart.
           </span>
         </template>
         <template #footer>
