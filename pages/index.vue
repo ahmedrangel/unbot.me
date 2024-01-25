@@ -7,7 +7,7 @@ const { loggedIn } = useUserSession();
   <main>
     <div v-if="!loggedIn">
       <div class="d-flex justify-content-center align-items-center">
-        <div class="col-7">
+        <div class="col-12 col-md-7">
           <h1 class="mb-5"><b>unbot.me</b></h1>
           <h6 class="mb-5">Unbotme is a bot for Twitch designed to automatically ban identified bots that persistently lurk in channels.</h6>
           <PrimeButton type="button" label="JOIN MY CHANNEL" @click="navigateTo('/api/auth/twitch', { external: true })">
