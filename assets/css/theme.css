@@ -1,10 +1,42 @@
 :root, [data-bs-theme=dark] {
+  --primary-color: #3450e8;
+  --secondary-color: #b0c1eb;
   --bs-primary: var(--primary-color);
-  --bs-primary-rgb: 244, 114, 182;
-  --bs-body-bg: #110e1a!important;
+  --bs-primary-rgb: 52, 80, 232;
+  --bs-body-bg: #252942!important;
   --font-varela-round: "Varela Round";
   --bs-body-font-family: var(--font-varela-round);
   --font-family: var(--font-varela-round);
   --danger-color: #f87171;
   --danger-color-rgb: 248, 133, 133;
+}
+
+.p-card {
+  background-color: var(--secondary-color)!important;
+  border: 2px solid var(--bs-border-color)!important;
+}
+
+hr {
+  color: var(--bs-body-bg);
+  opacity: 1;
+}
+
+#info {
+  --bs-border-color: rgba(var(--bs-primary-rgb), .5)!important;
+}
+
+#danger {
+  --bs-border-color: rgba(var(--danger-color-rgb), .5)!important;
+}
+
+.p-card-content {
+  padding: 0;
+}
+
+.p-card>* {
+  color: #000;
+}
+
+.p-card>* .text-muted {
+  color: #212f51!important;
 }
