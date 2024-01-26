@@ -17,3 +17,24 @@
 .p-card .text-muted {
   color: #fac1e4;
 }
+
+.p-card {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--bs-border-color);
+}
+
+#info {
+  --bs-border-color: rgba(var(--bs-primary-rgb), .5);
+}
+
+#danger {
+  --bs-border-color: rgba(var(--danger-color-rgb), .5);
+}
+
+.p-card-content {
+  padding: 0;
+}
+
+.p-card .text-muted {
+  color: #c1c1c1!important;
+}
