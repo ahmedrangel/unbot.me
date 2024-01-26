@@ -4,12 +4,16 @@
 @import "~/assets/css/theme.css" layer(theme);
 
 .p-button {
-  background: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .p-button-danger {
-  color: #450a0a;
-  background: #f87171;
-  border: 1px solid #f87171;
+  color: #300d12;
+  background: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+.p-card .text-muted {
+  color: #fac1e4;
 }

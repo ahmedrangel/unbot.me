@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/main.css",
     "~/assets/css/transitions.css",
-    "primevue/resources/themes/lara-dark-blue/theme.css",
+    "primevue/resources/themes/lara-dark-pink/theme.css",
     "primeicons/primeicons.css"
   ],
   modules: [
