@@ -99,7 +99,7 @@ const { loggedIn } = useUserSession();
                       This site will tell you that the bot has joined your channel.
                     </li>
                     <li class="mb-3">
-                      Ensure that you have granted moderator privileges to <span class="text-primary">@unbotme</span>
+                      Ensure that you have granted moderator privileges to <span class="text-primary">@unbotme</span>.
                     </li>
                   </ol>
                   <img class="rounded" src="/images/example-2.jpg" style="width: 100%; max-width: 300px;">
