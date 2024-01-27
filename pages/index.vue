@@ -7,7 +7,7 @@ const { loggedIn } = useUserSession();
   <main>
     <div v-if="!loggedIn">
       <div class="d-flex justify-content-center align-items-center mb-4">
-        <div class="col-12 col-lg-7 col-md-6">
+        <div class="col-12 col-lg-7 col-md-12">
           <h1 class="mb-4"><b>unbot.me</b></h1>
           <PrimeCard>
             <template #content>
