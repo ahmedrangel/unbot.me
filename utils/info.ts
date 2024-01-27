@@ -17,7 +17,7 @@ export const INDEX = {
       list_type: "ul",
       list: [
         "Are malicious bots (with few exceptions).",
-        "Attempts to attract attention, leading you or your auidience to visit their channels and possibly exposing you to ads to gain revenue or other unknown intentions.",
+        "Attempts to attract attention, leading you or your audience to visit their channels and possibly exposing you to ads for their profit or other unknown intentions.",
         "Collects your metadata for unknown purposes.",
         "Makes your viewer list very inaccurate compared to your actual number of spectators, as they don't count towards views.",
         "Are identified and listed as bots on multilpe websites."
