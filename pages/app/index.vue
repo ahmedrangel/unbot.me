@@ -68,6 +68,27 @@ onMounted(async () => {
           <PrimeButton type="button" class="fw-bold" label="LEAVE MY CHANNEL" icon="pi pi-sign-out" severity="danger" @click="leave" />
         </template>
       </PrimeCard>
+      <hr class="my-5">
+      <div class="row g-1">
+        <div v-for="(guide, i) of INDEX.guide" :key="i" class="col-12 col-sm-12 col-md-4 col-lg-4">
+          <PrimeCard v-if="i < INDEX.guide.length - 1" class="text-center h-100">
+            <template #content>
+              <h5 class="mb-3">{{ guide.title }}</h5>
+              <div class="text-center">
+                <h6 class="mb-0">
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <p v-html="guide.subtitle" />
+                  <component :is="String(guide.list_type)">
+                    <!-- eslint-disable-next-line vue/no-v-html -->
+                    <li v-for="(list, j) of guide.list" :key="j" class="mb-3 text-start" v-html="list" />
+                  </component>
+                  <img class="rounded" :src="guide.image" style="width: 100%; max-width: 300px;">
+                </h6>
+              </div>
+            </template>
+          </PrimeCard>
+        </div>
+      </div>
     </div>
   </main>
 </template>
