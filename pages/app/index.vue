@@ -77,7 +77,7 @@ onMounted(async () => {
               <div class="text-center">
                 <h6 class="mb-0">
                   <!-- eslint-disable-next-line vue/no-v-html -->
-                  <p v-html="guide.subtitle" />
+                  <p class="text-start" v-html="guide.subtitle" />
                   <component :is="String(guide.list_type)">
                     <!-- eslint-disable-next-line vue/no-v-html -->
                     <li v-for="(list, j) of guide.list" :key="j" class="mb-3 text-start" v-html="list" />
