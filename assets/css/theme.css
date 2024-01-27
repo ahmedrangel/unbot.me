@@ -1,5 +1,7 @@
 :root, [data-bs-theme=dark] {
   --primary-color: #F28DCF;
+  --primary-light: #f3b9de;
+  --primary-light-rgb: 243, 185, 222;
   --secondary-color: #2e303d;
   --bs-primary: var(--primary-color);
   --bs-primary-rgb: 242, 141, 207;
@@ -9,4 +11,6 @@
   --font-family: var(--font-varela-round);
   --danger-color: #ff6271;
   --danger-color-rgb: 255, 78, 95;
+  --danger-light: #f498a0;
+  --danger-light-rgb: 244, 152, 160;
 }

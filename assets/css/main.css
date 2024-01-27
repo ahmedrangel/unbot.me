@@ -8,10 +8,28 @@
   border: 1px solid var(--primary-color);
 }
 
+.p-button:hover {
+  background: var(--primary-light);
+  border: 1px solid var(--primary-color);
+}
+
+.p-button:focus {
+  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--primary-light-rgb), 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0);
+}
+
 .p-button-danger {
   color: #300d12;
   background: var(--danger-color);
   border: 1px solid var(--danger-color);
+}
+
+.p-button-danger:hover {
+  background: var(--danger-light);
+  border: 1px solid var(--danger-color);
+}
+
+.p-button-danger:focus {
+  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--danger-light-rgb), 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0);
 }
 
 .p-card .text-muted {
@@ -37,4 +55,8 @@
 
 .p-card .text-muted {
   color: #c1c1c1!important;
+}
+
+ul, ol {
+  padding-left: 1rem;
 }
