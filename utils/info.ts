@@ -1,6 +1,10 @@
 export const SITE = {
+  title: "Unbotme • Ban Twitch malicious bots",
   name: "unbot.me",
+  description: "Unbotme is a bot for Twitch designed to automatically ban identified bots that persistently lurk in channels.",
+  keywords: "twitch, bot, ban, malicious bots, unbotme, unbot.me, lurk, viewers, chatters, viewers count",
   bot_name: "unbotme",
+  host: process.dev ? "http://localhost:5173" : "https://unbot.me"
 };
 
 export const INDEX = {

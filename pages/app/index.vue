@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { SITE } from '~/utils/info';
+
 definePageMeta({ layout: "app", middleware: "session" });
 const { loggedIn, user, clear } = useUserSession();
 const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
@@ -34,6 +36,21 @@ const leave = async () => {
 
 onMounted(async () => {
   await socketEmit("login", user.value);
+});
+
+useSeoMeta({
+  description: SITE.description,
+  keywords: SITE.keywords,
+  ogUrl: SITE.host,
+  ogDescription: SITE.description,
+  twitterTitle: SITE.title,
+  twitterDescription: SITE.description
+});
+
+useHead({
+  link: [
+    { rel: "canonical", href: SITE.host }
+  ]
 });
 </script>
 
