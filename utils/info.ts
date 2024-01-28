@@ -4,12 +4,13 @@ export const SITE = {
   description: "Unbotme is a bot for Twitch designed to automatically ban identified bots that persistently lurk in channels.",
   keywords: "twitch, bot, ban, malicious bots, unbotme, unbot.me, lurk, viewers, chatters, viewers count",
   bot_name: "unbotme",
-  host: process.dev ? "http://localhost:5173" : "https://unbot.me"
+  host: process.dev ? "http://localhost:5173" : "https://unbot.me",
+  socket: "https://unbotme.yizack.com"
 };
 
 export const INDEX = {
   description: `<span class="text-primary">@${SITE.bot_name}</span> is a bot for Twitch designed to automatically ban identified bots that persistently lurk in channels.`,
-  join_button: "JOIN MY CHANNEL",
+  login_button: "LOG IN WITH TWITCH",
   guide: [
     {
       title: "Have you ever noticed random users like these appearing in your viewers list even when you're not live?",
@@ -41,10 +42,11 @@ export const INDEX = {
       title: "How to start?",
       list_type: "ol",
       list: [
-        "Click on the \"JOIN MY CHANNEL\" button.",
+        "Click on \"LOG IN\".",
         "Authenticate your Twitch channel.",
-        "This site will tell you that the bot has joined your channel.",
-        `Ensure that you have granted moderator privileges to <span class="text-primary">@${SITE.bot_name}</span>.`
+        "Click on \"JOIN MY CHANNEL\".",
+        `Ensure that you have granted moderator privileges to <span class="text-primary">@${SITE.bot_name}</span>.`,
+        "You are ready!"
       ],
       image: "/images/example-3.jpg"
     }

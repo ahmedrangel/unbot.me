@@ -1,6 +1,7 @@
 <template>
   <div id="layout">
-    <div class="container text-center py-5">
+    <NavbarApp />
+    <div class="container-md text-center py-5">
       <slot />
     </div>
   </div>

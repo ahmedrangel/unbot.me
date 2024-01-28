@@ -32,10 +32,6 @@
   box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--danger-light-rgb), 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0);
 }
 
-.p-card .text-muted {
-  color: #fac1e4;
-}
-
 .p-card {
   background-color: var(--secondary-color);
   border: 2px solid var(--bs-border-color);

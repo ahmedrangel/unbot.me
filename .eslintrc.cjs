@@ -47,6 +47,7 @@ module.exports = {
     "node_modules/**/*",
     ".nuxt/**/*",
     "dist/**/*",
-    ".output/**/*"
+    ".output/**/*",
+    "modules/**/*"
   ]
 };

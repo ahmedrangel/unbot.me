@@ -20,7 +20,6 @@ export default oauth.twitchEventHandler({
     }).onConflictDoUpdate({
       target: tables.users.id_user,
       set: {
-        active: 1,
         user_login: user.login,
         username: user.display_name,
         refresh_token: user.tokens.refresh_token,

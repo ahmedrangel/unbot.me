@@ -1,10 +1,12 @@
-:root, [data-bs-theme=dark] {
+:root, [data-bs-theme="dark"] {
   --primary-color: #F28DCF;
   --primary-light: #f3b9de;
   --primary-light-rgb: 243, 185, 222;
   --secondary-color: #2e303d;
   --bs-primary: var(--primary-color);
   --bs-primary-rgb: 242, 141, 207;
+  --bs-secondary: var(--secondary-color);
+  --bs-secondary-rgb: 46, 48, 61;
   --bs-body-bg: #191b29!important;
   --font-varela-round: "Varela Round";
   --bs-body-font-family: var(--font-varela-round);

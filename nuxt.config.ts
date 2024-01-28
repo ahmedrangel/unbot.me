@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/main.css",
     "~/assets/css/transitions.css",
+    "~/assets/css/navbar.css",
     "primevue/resources/themes/lara-dark-pink/theme.css",
     "primeicons/primeicons.css"
   ],
@@ -75,6 +76,9 @@ export default defineNuxtConfig({
     components: {
       prefix: "Prime",
       include: ["Button", "Card"] /* Used as <PrimeButton /> */
+    },
+    directives: {
+      include: ["Ripple"]
     }
   }
 });
