@@ -65,12 +65,12 @@ const isRouteActive = (prefix?: string) => {
         <button class="navbar-toggler border-0 rounded-pill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" />
         </button>
-        <NuxtLink class="navbar-brand ms-2 ms-md-0 me-auto d-flex align-items-center gap-1 text-decoration-none" to="/app">
+        <div class="navbar-brand ms-2 ms-lg-0 me-auto d-flex align-items-center gap-1 text-decoration-none">
           <img src="/images/unbotme.svg" width="45">
-        </NuxtLink>
-        <div id="offcanvasNavbar" class="offcanvas offcanvas-start bg-primary" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 id="offcanvasNavbarLabel" class="offcanvas-title">{{ SITE.name }}</h5>
+        </div>
+        <div id="offcanvasNavbar" class="offcanvas offcanvas-start bg-secondary" tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header px-5 pt-4 pb-0">
+            <img src="/images/unbotme.svg" width="45">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
           </div>
           <div class="offcanvas-body">
