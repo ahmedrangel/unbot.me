@@ -16,6 +16,7 @@
 
 .navbar-nav .nav-item .nav-link.router-link-active.router-link-exact-active, .navbar-nav .nav-item .nav-link.active {
   color: var(--bs-primary);
+  background-color: var(--bs-body-bg);
 }
 
 .navbar .dropdown-item:focus, .navbar .dropdown-item:hover {
