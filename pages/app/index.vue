@@ -81,7 +81,7 @@ useHead({
             If you prefer the bot to no longer moderate, just click on "Leave My Channel", and it will depart.
           </span>
           <span v-if="!isActive" class="text-muted">
-            Click 'Join My Channel' to allow the bot to enter your channel.
+            Click "Join My Channel" to allow the bot to enter your channel.
           </span>
         </template>
         <template #footer>
