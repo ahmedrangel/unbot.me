@@ -32,6 +32,7 @@
     "drizzle-orm": "^0.29.3",
     "eslint": "^8.56.0",
     "nuxt": "^3.9.3",
+    "nuxt-auth-utils": "^0.0.15",
     "nuxt-icon": "^0.6.8",
     "nuxt-primevue": "^0.2.2",
     "nuxt-simple-sitemap": "^4.4.1",

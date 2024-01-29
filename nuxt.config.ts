@@ -35,7 +35,8 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxtjs/color-mode",
     "nuxt-simple-sitemap",
-    "nuxt-primevue"
+    "nuxt-primevue",
+    "nuxt-auth-utils"
   ],
   runtimeConfig: {},
   features: {
