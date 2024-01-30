@@ -34,18 +34,19 @@ const join = async () => {
 };
 
 useSeoMeta({
+  title: "App | " + SITE.title,
   description: SITE.description,
   keywords: SITE.keywords,
-  ogUrl: SITE.host,
-  ogDescription: SITE.description,
-  twitterTitle: SITE.title,
-  twitterDescription: SITE.description
-});
-
-useHead({
-  link: [
-    { rel: "canonical", href: SITE.host }
-  ]
+  // Open Graph
+  ogType: "website",
+  ogTitle: "App | " + SEO.og.title,
+  ogDescription: SEO.og.description,
+  ogUrl: SEO.og.url,
+  ogImage: SEO.og.image,
+  // Twitter
+  twitterCard: "summary",
+  twitterTitle: "App | " + SEO.twitter.title,
+  twitterDescription: SEO.twitter.description
 });
 </script>
 

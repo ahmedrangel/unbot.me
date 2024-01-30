@@ -1,6 +1,27 @@
 <script setup lang="ts">
 definePageMeta({ layout: "access", middleware: "authenticated" });
 const { loggedIn } = useUserSession();
+
+useSeoMeta({
+  title: SITE.title,
+  description: SITE.description,
+  keywords: SITE.keywords,
+  // Open Graph
+  ogType: "website",
+  ogTitle: SEO.og.title,
+  ogDescription: SEO.og.description,
+  ogUrl: SEO.og.url,
+  ogImage: SEO.og.image,
+  // Twitter
+  twitterCard: "summary",
+  twitterTitle: SEO.twitter.title,
+  twitterDescription: SEO.twitter.description
+});
+useHead({
+  link: [
+    { rel: "canonical", href: SITE.host }
+  ]
+});
 </script>
 
 <template>
