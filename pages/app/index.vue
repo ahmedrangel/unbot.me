@@ -17,7 +17,7 @@ const socketEmit = async (event: string, value: Object) => {
 
 const leave = async () => {
   if (!process.client) return;
-  await socketEmit("logout", {
+  await socketEmit("leave", {
     id_user: user.value.id,
     user_login: user.value.login,
     username: user.value.display_name
@@ -28,7 +28,7 @@ const leave = async () => {
 
 const join = async () => {
   if (!process.client) return;
-  await socketEmit("login", user.value);
+  await socketEmit("join", user.value);
   await $fetch("/api/users/activate/1", { method: "PUT" }).catch(() => null);
   isActive.value = 1;
 };
