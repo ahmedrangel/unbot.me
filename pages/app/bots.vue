@@ -9,7 +9,7 @@ const { loggedIn, user } = useUserSession();
     <div v-if="loggedIn">
       <PrimeCard id="info" class="col-12 col-md-12 col-lg-6 mb-3 mx-auto">
         <template #title>
-          <h4 class="mb-0 text-break">Default Bot List</h4>
+          <h4 class="mb-0 text-break">Default Identified Bots List</h4>
         </template>
         <template #content>
           <div class="text-start">
