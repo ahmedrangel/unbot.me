@@ -1,16 +1,16 @@
 {
-  "name": "my-nuxt-starter",
+  "name": "unbot.me",
   "version": "1.0.0",
-  "description": "Yizack nuxt template",
-  "author": "Yizack Rangel",
+  "description": "unbotme is a bot for Twitch designed to automatically ban identified bots that persistently lurk in channels.",
+  "author": "Ahmed Rangel",
   "type": "module",
-  "homepage": "https://github.com/Yizack/my-nuxt-starter",
+  "homepage": "https://github.com/ahmedrangel/unbot.me",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yizack/my-nuxt-starter"
+    "url": "https://github.com/ahmedrangel/unbot.me"
   },
   "bugs": {
-    "url": "https://github.com/Yizack/my-nuxt-starter/issues"
+    "url": "https://github.com/ahmedrangel/unbot.me/issues"
   },
   "scripts": {
     "build": "nuxt build",
@@ -27,21 +27,21 @@
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/color-mode": "^3.3.2",
     "@types/bootstrap": "^5.2.10",
-    "better-sqlite3": "^9.3.0",
-    "drizzle-kit": "^0.20.13",
+    "better-sqlite3": "^9.4.1",
+    "drizzle-kit": "^0.20.14",
     "drizzle-orm": "^0.29.3",
     "eslint": "^8.56.0",
-    "nuxt": "^3.9.3",
-    "nuxt-auth-utils": "^0.0.15",
+    "nuxt": "^3.10.2",
+    "nuxt-auth-utils": "^0.0.16",
     "nuxt-icon": "^0.6.8",
-    "nuxt-primevue": "^0.2.2",
+    "nuxt-primevue": "^0.3.0",
     "nuxt-simple-sitemap": "^4.4.1",
     "stylelint-config-standard": "^36.0.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
     "primeicons": "^6.0.1",
-    "primevue": "^3.47.1",
+    "primevue": "^3.48.1",
     "socket.io-client": "^4.7.4"
   }
 }
