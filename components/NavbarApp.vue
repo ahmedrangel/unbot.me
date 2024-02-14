@@ -5,7 +5,7 @@ const logOut = async() => {
   navigateTo("/", { replace: true });
 };
 
-const tabs = [
+const tabs: Record<string, any> = [
   {
     id: "app",
     name: "Home",
@@ -39,17 +39,6 @@ useHead({
 
 beforeEach(({ name }) => {
   currentRoute.value.name = name;
-});
-
-const tabName = computed(() => {
-  if (!currentRoute.value.name) return;
-  for (const tab of tabs) {
-    if (tab.subtabs) {
-      const name = tab.subtabs.find(({ id }: any) => id === currentRoute.value.name)?.name;
-      if (name) return name;
-    }
-    if (tab.id === currentRoute.value.name) return tab.name;
-  }
 });
 
 const isRouteActive = (prefix?: string) => {

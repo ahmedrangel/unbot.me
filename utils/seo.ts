@@ -1,4 +1,4 @@
-import { SITE } from "./info.ts";
+import { SITE } from "./info";
 
 export const SEO = {
   og: {
