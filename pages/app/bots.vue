@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: "app", middleware: "session" });
 
-const { loggedIn, user } = useUserSession();
+const { loggedIn } = useUserSession();
 </script>
 
 <template>

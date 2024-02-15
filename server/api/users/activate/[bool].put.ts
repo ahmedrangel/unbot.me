@@ -1,8 +1,8 @@
 import { eq } from "drizzle-orm";
 
 export default defineEventHandler(async (event) => {
-  const session = await requireUserSession(event);
-  const user = session.user as UserSession["user"];
+  const session = await requireUserSession(event) as UserSession;
+  const user = session.user;
   const { bool } = getRouterParams(event);
   const DB = useDB();
   const data = await DB.update(tables.users).set({
