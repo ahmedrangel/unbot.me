@@ -1,14 +1,14 @@
 export const botList = [
   {
     name: "Full list",
-    url: "http://unbotme.yizack.com:8080/api/botslist"
+    url: "https://unbotme.yizack.com:8443/api/botslist"
   },
   {
     name: "Whitelisted bots",
-    url: "http://unbotme.yizack.com:8080/api/goodbots"
+    url: "https://unbotme.yizack.com:8443/api/goodbots"
   },
   {
     name: "Blacklisted bots",
-    url: "http://unbotme.yizack.com:8080/api/badbots"
+    url: "https://unbotme.yizack.com:8443/api/badbots"
   }
 ];
