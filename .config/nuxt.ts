@@ -1,6 +1,8 @@
-import { SITE } from "./utils/info";
+import { customPreset } from "../app/utils/primevue";
 
 export default defineNuxtConfig({
+  future: { compatibilityVersion: 4 },
+  compatibilityDate: "2024-08-10",
   app: {
     pageTransition: { name: "fade", mode: "out-in" },
     layoutTransition: { name: "fade", mode: "out-in" },
@@ -14,30 +16,27 @@ export default defineNuxtConfig({
         { name: "robots", content: "index, follow" }
       ],
       link: [
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Varela+Round", },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Varela+Round" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "512x512", href: "/android-chrome-512x512.png" },
         { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
         { rel: "manifest", href: "/site.webmanifest" },
-        { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#0b0e0f" },
+        { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#0b0e0f" }
       ]
     }
   },
   css: [
-    "~/assets/css/main.css",
-    "~/assets/css/transitions.css",
-    "~/assets/css/navbar.css",
-    "primevue/resources/themes/lara-dark-pink/theme.css",
-    "primeicons/primeicons.css"
+    "~/assets/scss/app.scss"
   ],
   modules: [
-    "nuxt-icon",
+    "@nuxt/icon",
     "@nuxtjs/color-mode",
-    "nuxt-simple-sitemap",
-    "nuxt-primevue",
-    "nuxt-auth-utils"
+    "@nuxtjs/sitemap",
+    "@primevue/nuxt-module",
+    "nuxt-auth-utils",
+    "@nuxt/eslint"
   ],
   runtimeConfig: {},
   features: {
@@ -50,15 +49,14 @@ export default defineNuxtConfig({
     storageKey: "nuxt-color-mode"
   },
   site: {
-    url: SITE.host
+    url: "https://unbot.me"
   },
   nitro: {
     prerender: {
-      routes: ["/sitemap.xml"],
+      routes: ["/sitemap.xml"]
     }
   },
   sitemap: {
-    dynamicUrlsApiEndpoint: "/__sitemap",
     xslColumns: [
       { label: "URL", width: "65%" },
       { label: "Priority", select: "sitemap:priority", width: "12.5%" },
@@ -67,20 +65,28 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/": { sitemap: { priority: 1 } },
-    "/*/**": { sitemap: { priority: 0.8, lastmod: new Date().toISOString() } }
+    "/*/**": { sitemap: { priority: 0.8, lastmod: new Date().toISOString() } },
+    "/api/_nuxt_icon/**": { cache: { maxAge: 1.577e+7 } }
   },
   primevue: {
-    usePrimeVue: true,
-    cssLayerOrder: "theme, bootstrap, primevue",
     options: {
       ripple: true,
+      theme: {
+        preset: customPreset,
+        options: {
+          cssLayer: { name: "primevue", order: "primevue" }
+        }
+      }
     },
     components: {
       prefix: "Prime",
       include: ["Button", "Card"] /* Used as <PrimeButton /> */
-    },
-    directives: {
-      include: ["Ripple"]
+    }
+  },
+  eslint: {
+    config: {
+      autoInit: false,
+      stylistic: true
     }
   }
 });

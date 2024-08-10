@@ -36,7 +36,7 @@ useHead({
               <h5 class="mb-0" v-html="INDEX.description" />
             </template>
             <template #footer>
-              <PrimeButton type="button" :label="INDEX.login_button" @click="navigateTo('/api/auth/twitch', { external: true })">
+              <PrimeButton type="button" class="rounded text-dark fw-bold" :label="INDEX.login_button" @click="navigateTo('/api/auth/twitch', { external: true })">
                 <template #icon>
                   <Icon class="iconify me-1" style="font-size: 24px; width: 40px;" name="simple-icons:twitch" />
                 </template>

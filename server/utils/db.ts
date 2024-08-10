@@ -1,10 +1,11 @@
 import { drizzle as drizzleD1, type DrizzleD1Database } from "drizzle-orm/d1";
 import { drizzle, type BetterSQLite3Database } from "drizzle-orm/better-sqlite3";
 
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import Database from "better-sqlite3";
 
-export * as tables from "~/server/db/schema";
+export * as tables from "../db/schema";
 
 let _db: DrizzleD1Database | BetterSQLite3Database | null = null;
 
@@ -14,7 +15,7 @@ export const useDB = () => {
       // d1 in production
       _db = drizzleD1(process.env.DB);
     }
-    else if (process.dev) {
+    else if (import.meta.dev) {
       // local sqlite in development
       const sqlite = new Database("server/db/db.sqlite");
       _db = drizzle(sqlite);

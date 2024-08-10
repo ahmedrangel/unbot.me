@@ -1,10 +1,7 @@
 /* main.css */
-@layer bootstrap, primevue;
-@import "bootstrap/dist/css/bootstrap.min.css" layer(bootstrap);
-@import "~/assets/css/theme.css" layer(theme);
 
 body {
-  background: linear-gradient(rgb(25 27 41 / 99%),rgb(25 27 41 / 99%)),url(/images/unbotme.svg);
+  background: linear-gradient(rgb(25 27 41 / 99%), rgb(25 27 41 / 99%)),url("/images/unbotme.svg");
   background-position: 14%;
   background-repeat: repeat;
   background-size: 18%;
@@ -21,7 +18,7 @@ body {
 }
 
 .p-button:focus {
-  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--primary-light-rgb), 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--primary-light-rgb), 0.7), 0 1px 2px 0 rgb(0 0 0 / 0%);
 }
 
 .p-button-danger {
@@ -36,7 +33,7 @@ body {
 }
 
 .p-button-danger:focus {
-  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--danger-light-rgb), 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px rgba(var(--danger-light-rgb), 0.7), 0 1px 2px 0 rgb(0 0 0 / 0%);
 }
 
 .p-card {

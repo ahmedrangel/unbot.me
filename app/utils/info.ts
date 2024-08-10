@@ -4,7 +4,7 @@ export const SITE = {
   description: "Unbotme is a bot for Twitch designed to automatically ban identified bots that persistently lurk in channels.",
   keywords: "twitch, bot, ban, malicious bots, unbotme, unbot.me, lurk, viewers, chatters, viewers count, list",
   bot_name: "unbotme",
-  host: process.dev ? "http://localhost:5173" : "https://unbot.me",
+  host: import.meta.dev ? "http://localhost:5173" : "https://unbot.me",
   socket: "https://unbotme.yizack.com"
 };
 
@@ -26,7 +26,7 @@ export const INDEX = {
         "Collects your metadata for unknown purposes.",
         "Makes your viewer list very inaccurate compared to your actual number of spectators, as they don't count towards views.",
         "Are identified and listed as bots on multilpe websites."
-      ],
+      ]
     },
     {
       title: "Our solution",
@@ -34,7 +34,7 @@ export const INDEX = {
       list_type: "ul",
       list: [
         "Monitors your channel's viewer list, and upon detecting any of those bots, it automatically bans them for you.",
-        "Exempts banning good bots that are genuinely there for beneficial purposes.",
+        "Exempts banning good bots that are genuinely there for beneficial purposes."
       ],
       image: "/images/example-2.jpg"
     },

@@ -1,9 +1,9 @@
-export default oauth.twitchEventHandler({
+export default oauthTwitchEventHandler({
   config: {
     emailRequired: true,
     scope: ["moderator:read:chatters"]
   },
-  async onSuccess(event, result) {
+  async onSuccess (event, result) {
     const user = result.user as UserSession["user"];
     user.tokens = result.tokens;
 
@@ -16,14 +16,14 @@ export default oauth.twitchEventHandler({
       username: user.display_name,
       refresh_token: user.tokens.refresh_token,
       created_at: today,
-      updated_at: today,
+      updated_at: today
     }).onConflictDoUpdate({
       target: tables.users.id_user,
       set: {
         user_login: user.login,
         username: user.display_name,
         refresh_token: user.tokens.refresh_token,
-        updated_at: today,
+        updated_at: today
       }
     }).returning().get();
 

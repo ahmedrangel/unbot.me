@@ -7,5 +7,5 @@ export const users = sqliteTable("users", {
   refresh_token: text("refresh_token").notNull(),
   active: integer("active").notNull().default(1),
   created_at: integer("created_at").notNull(),
-  updated_at: integer("updated_at").notNull(),
+  updated_at: integer("updated_at").notNull()
 });

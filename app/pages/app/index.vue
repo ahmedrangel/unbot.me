@@ -6,7 +6,7 @@ const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
 
 const isActive = ref(userState.value?.active);
 
-const socketEmit = async (event: string, value: Object) => {
+const socketEmit = async (event: string, value: object) => {
   const { io } = await import("socket.io-client");
   const socket = io(SITE.socket, { reconnectionAttempts: 3 });
   socket.on("connect", () => {
@@ -16,7 +16,7 @@ const socketEmit = async (event: string, value: Object) => {
 };
 
 const leave = async () => {
-  if (!process.client) return;
+  if (!import.meta.client) return;
   await socketEmit("leave", {
     id_user: user.value.id,
     user_login: user.value.login,
@@ -27,7 +27,7 @@ const leave = async () => {
 };
 
 const join = async () => {
-  if (!process.client) return;
+  if (!import.meta.client) return;
   await socketEmit("join", user.value);
   await $fetch("/api/users/activate/1", { method: "PUT" }).catch(() => null);
   isActive.value = 1;

@@ -1,6 +1,6 @@
 export const setScrollBehavior = () => {
   const { options } = useRouter();
-  options.scrollBehavior = (to) => {
+  options.scrollBehavior = (to: { hash: string }) => {
     if (to.hash === "") return { left: 0, top: 0 };
     return new Promise((resolve) => {
       setTimeout(() => {

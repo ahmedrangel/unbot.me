@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { loggedIn, user, clear } = useUserSession();
-const logOut = async() => {
+const logOut = async () => {
   await clear();
   navigateTo("/", { replace: true });
 };
@@ -10,13 +10,13 @@ const tabs: Record<string, any> = [
     id: "app",
     name: "Home",
     type: "link",
-    route: "/app",
+    route: "/app"
   },
   {
     id: "bots",
     name: "Bot List",
     type: "link",
-    route: "/app/bots",
+    route: "/app/bots"
   },
   {
     name: loggedIn ? String(user.value.display_name) : "Profile",
@@ -29,7 +29,7 @@ const tabs: Record<string, any> = [
 ];
 
 const { currentRoute, beforeEach } = useRouter();
-const canonical = computed(() => SITE.host + currentRoute.value.path. replace(/\/+$/, ""));
+const canonical = computed(() => SITE.host + currentRoute.value.path.replace(/\/+$/, ""));
 
 useHead({
   link: [
