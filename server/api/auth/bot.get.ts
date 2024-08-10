@@ -4,10 +4,9 @@ export default oauthTwitchEventHandler({
     scope: ["chat:read", "chat:edit", "channel:moderate", "moderator:manage:banned_users"]
   },
   async onSuccess (event, result) {
-    const user = result.user as UserSession["user"];
-    user.tokens = result.tokens;
+    const { user, tokens } = result as { user: UnbotmeUser, tokens: UnbotmeUserTokens };
 
-    await setUserSession(event, { user });
+    await setUserSession(event, { user: { ...user, tokens } });
     return sendRedirect(event, "/");
   }
 });

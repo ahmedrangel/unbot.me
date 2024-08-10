@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: "app", middleware: "session" });
 
-const { loggedIn, user } = useUserSession();
+const { loggedIn, user } = useUserSession() as UnbotmeUserSessionComposable;
 const { data: userState } = await useFetch(`/api/users/state/${user.value.id}`);
 
 const isActive = ref(userState.value?.active);

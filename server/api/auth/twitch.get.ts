@@ -4,9 +4,7 @@ export default oauthTwitchEventHandler({
     scope: ["moderator:read:chatters"]
   },
   async onSuccess (event, result) {
-    const user = result.user as UserSession["user"];
-    user.tokens = result.tokens;
-
+    const { user, tokens } = result as { user: UnbotmeUser, tokens: UnbotmeUserTokens };
     const today = Date.now();
 
     const DB = useDB();
@@ -27,7 +25,7 @@ export default oauthTwitchEventHandler({
       }
     }).returning().get();
 
-    await setUserSession(event, { user });
+    await setUserSession(event, { user: { ...user, tokens } });
     return sendRedirect(event, "/");
   }
 });
