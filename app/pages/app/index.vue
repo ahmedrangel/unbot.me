@@ -86,8 +86,8 @@ useSeoMeta({
           </span>
         </template>
         <template #footer>
-          <PrimeButton v-if="isActive" type="button" class="fw-bold" label="LEAVE MY CHANNEL" icon="pi pi-sign-out" severity="danger" @click="leave" />
-          <PrimeButton v-if="!isActive" type="button" class="fw-bold" label="JOIN MY CHANNEL" icon="pi pi-sign-in" @click="join" />
+          <PrimeButton v-if="isActive" type="button" class="fw-bold rounded text-dark" label="LEAVE MY CHANNEL" icon="pi pi-sign-out" severity="danger" @click="leave" />
+          <PrimeButton v-if="!isActive" type="button" class="fw-bold rounded text-dark" label="JOIN MY CHANNEL" icon="pi pi-sign-in" @click="join" />
         </template>
       </PrimeCard>
     </div>

@@ -19,6 +19,7 @@ const Button = {
     roundedBorderRadius: "2rem",
     paddingX: "1.25rem",
     paddingY: "0.75rem",
+    gap: "0.5rem",
     iconOnlyWidth: "2.5rem",
     sm: {
       fontSize: "0.875rem",

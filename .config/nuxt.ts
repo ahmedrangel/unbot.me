@@ -28,7 +28,8 @@ export default defineNuxtConfig({
     }
   },
   css: [
-    "~/assets/scss/app.scss"
+    "~/assets/scss/app.scss",
+    "primeicons/primeicons.css"
   ],
   modules: [
     "@nuxt/icon",
