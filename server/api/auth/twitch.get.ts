@@ -12,7 +12,7 @@ export default oauthTwitchEventHandler({
       id_user: Number(user.id),
       user_login: user.login,
       username: user.display_name,
-      refresh_token: user.tokens.refresh_token,
+      refresh_token: tokens.refresh_token,
       created_at: today,
       updated_at: today
     }).onConflictDoUpdate({
@@ -20,7 +20,7 @@ export default oauthTwitchEventHandler({
       set: {
         user_login: user.login,
         username: user.display_name,
-        refresh_token: user.tokens.refresh_token,
+        refresh_token: tokens.refresh_token,
         updated_at: today
       }
     }).returning().get();
