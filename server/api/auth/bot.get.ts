@@ -1,4 +1,4 @@
-export default oauthTwitchEventHandler({
+export default defineOAuthTwitchEventHandler({
   config: {
     emailRequired: true,
     scope: ["chat:read", "chat:edit", "channel:moderate", "moderator:manage:banned_users"]

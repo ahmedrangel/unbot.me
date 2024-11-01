@@ -2,7 +2,7 @@ import { customPreset } from "../app/utils/primevue";
 
 export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
-  compatibilityDate: "2024-08-10",
+  compatibilityDate: "2024-11-01",
   app: {
     pageTransition: { name: "fade", mode: "out-in" },
     layoutTransition: { name: "fade", mode: "out-in" },
@@ -39,6 +39,12 @@ export default defineNuxtConfig({
     "nuxt-auth-utils",
     "@nuxt/eslint"
   ],
+  icon: {
+    mode: "svg",
+    clientBundle: {
+      sizeLimitKb: 2048
+    }
+  },
   runtimeConfig: {},
   features: {
     inlineStyles: false
@@ -70,6 +76,7 @@ export default defineNuxtConfig({
     "/api/_nuxt_icon/**": { cache: { maxAge: 1.577e+7 } }
   },
   primevue: {
+    usePrimeVue: true,
     options: {
       ripple: true,
       theme: {
@@ -79,6 +86,7 @@ export default defineNuxtConfig({
         }
       }
     },
+    autoImport: false,
     components: {
       prefix: "Prime",
       include: ["Button", "Card"] /* Used as <PrimeButton /> */
@@ -88,6 +96,16 @@ export default defineNuxtConfig({
     config: {
       autoInit: false,
       stylistic: true
+    }
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+          api: "modern"
+        }
+      }
     }
   }
 });

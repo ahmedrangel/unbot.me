@@ -19,7 +19,7 @@ const tabs: Record<string, any> = [
     route: "/app/bots"
   },
   {
-    name: loggedIn ? String(user.value.display_name) : "Profile",
+    name: loggedIn ? String(user.value?.display_name) : "Profile",
     type: "dropdown",
     prefix: "/app/profile",
     subtabs: [
