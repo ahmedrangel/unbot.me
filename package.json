@@ -24,23 +24,25 @@
     "lint:stylelint": "stylelint \"**/*.{css,scss,sass}\" --config .config/stylelint.json"
   },
   "devDependencies": {
+    "@iconify-json/simple-icons": "^1.2.11",
     "@nuxt/eslint": "^0.6.1",
     "@nuxt/icon": "^1.6.1",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/sitemap": "^6.1.4",
     "@types/bootstrap": "^5.2.10",
     "better-sqlite3": "^11.5.0",
-    "drizzle-kit": "^0.27.0",
+    "drizzle-kit": "^0.27.1",
     "drizzle-orm": "^0.36.0",
-    "eslint": "^9.13.0",
-    "nuxt": "^3.13.2",
-    "nuxt-auth-utils": "^0.5.1",
-    "sass": "^1.80.5",
+    "eslint": "^9.14.0",
+    "nuxt": "^3.14.0",
+    "nuxt-auth-utils": "^0.5.2",
+    "sass": "^1.80.6",
     "stylelint": "^16.10.0",
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "dependencies": {
-    "@primevue/nuxt-module": "^4.1.1",
+    "@nuxt/fonts": "^0.10.2",
+    "@primevue/nuxt-module": "^4.2.1",
     "bootstrap": "^5.3.3",
     "primeicons": "^7.0.0",
     "socket.io-client": "^4.8.1"

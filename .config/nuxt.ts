@@ -16,7 +16,6 @@ export default defineNuxtConfig({
         { name: "robots", content: "index, follow" }
       ],
       link: [
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Varela+Round" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "512x512", href: "/android-chrome-512x512.png" },
         { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
@@ -37,7 +36,8 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@primevue/nuxt-module",
     "nuxt-auth-utils",
-    "@nuxt/eslint"
+    "@nuxt/eslint",
+    "@nuxt/fonts"
   ],
   icon: {
     mode: "svg",
@@ -107,5 +107,10 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  fonts: {
+    families: [
+      { name: "Varela Round", provider: "google" }
+    ]
   }
 });
