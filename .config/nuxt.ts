@@ -110,7 +110,7 @@ export default defineNuxtConfig({
   },
   fonts: {
     families: [
-      { name: "Varela Round", provider: "google" }
+      { name: "Varela Round", provider: "google", global: true }
     ]
   }
 });
