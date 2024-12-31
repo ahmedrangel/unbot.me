@@ -5,7 +5,7 @@ export const SITE = {
   keywords: "twitch, bot, ban, malicious bots, unbotme, unbot.me, lurk, viewers, chatters, viewers count, list",
   bot_name: "unbotme",
   host: import.meta.dev ? "http://localhost:5173" : "https://unbot.me",
-  socket: "https://unbotme.yizack.com"
+  socket: "https://service.unbot.me"
 };
 
 export const INDEX = {
